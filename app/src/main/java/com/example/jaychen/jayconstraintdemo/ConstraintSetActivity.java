@@ -12,6 +12,7 @@ import android.view.View;
 public class ConstraintSetActivity extends AppCompatActivity {
 
     ConstraintLayout constraintLayout;
+    boolean isInTop = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,12 @@ public class ConstraintSetActivity extends AppCompatActivity {
         findViewById(R.id.button41).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                animate();
+                if (isInTop) {
+                    animate();
+                } else {
+                    animateBack();
+                }
+                isInTop = !isInTop;
             }
         });
     }
@@ -36,10 +42,17 @@ public class ConstraintSetActivity extends AppCompatActivity {
         ConstraintSet set = new ConstraintSet();
         set.clone(this, R.layout.activity_constraint_set2);
         Transition transition = new AutoTransition();
-        transition.setDuration(5000);
+        transition.setDuration(2000);
         TransitionManager.beginDelayedTransition(constraintLayout, transition);
         set.applyTo(constraintLayout);
     }
 
-
+    private void animateBack() {
+        ConstraintSet set = new ConstraintSet();
+        set.clone(this, R.layout.activity_constraint_set);
+        Transition transition = new AutoTransition();
+        transition.setDuration(2000);
+        TransitionManager.beginDelayedTransition(constraintLayout, transition);
+        set.applyTo(constraintLayout);
+    }
 }
