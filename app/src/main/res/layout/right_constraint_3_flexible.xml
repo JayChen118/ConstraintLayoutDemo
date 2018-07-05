@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titleTextViewGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/horizontalCenterGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/verticalCenterGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/titleTextViewGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Team A vs Team B" />
+
+    <ImageView
+        android:id="@+id/teamALogo"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalCenterGuideline"
+        app:layout_constraintEnd_toStartOf="@id/teamAScoreTextView"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/horizontalCenterGuideline"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/teamAScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalCenterGuideline"
+        app:layout_constraintEnd_toStartOf="@id/verticalCenterGuideline"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/teamALogo"
+        app:layout_constraintTop_toTopOf="@id/horizontalCenterGuideline"
+        tools:text="3" />
+
+    <ImageView
+        android:id="@+id/teamBLogo"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalCenterGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/teamBScoreTextView"
+        app:layout_constraintTop_toTopOf="@id/horizontalCenterGuideline"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/teamBScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalCenterGuideline"
+        app:layout_constraintEnd_toStartOf="@id/teamBLogo"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/verticalCenterGuideline"
+        app:layout_constraintStart_toStartOf="@id/verticalCenterGuideline"
+        app:layout_constraintTop_toTopOf="@id/horizontalCenterGuideline"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/teamScoreSeparatorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text=":" />
+
+    <TextView
+        android:id="@+id/teamANameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/teamAScoreTextView"
+        app:layout_constraintStart_toStartOf="@id/teamAScoreTextView"
+        app:layout_constraintTop_toBottomOf="@id/teamAScoreTextView"
+        tools:text="Team Name" />
+
+    <TextView
+        android:id="@+id/teamBNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/teamBScoreTextView"
+        app:layout_constraintStart_toStartOf="@id/teamBScoreTextView"
+        app:layout_constraintTop_toBottomOf="@id/teamBScoreTextView"
+        tools:text="Team Name" />
+
+</android.support.constraint.ConstraintLayout>
